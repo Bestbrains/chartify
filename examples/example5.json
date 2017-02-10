@@ -1,0 +1,26 @@
+{
+    "unwanted_meta": {
+      "extracted": "2017-01-03",
+      "time_in_ms": 42,
+      "source": "endpoint_name",
+      "query": {
+        "paramA": "A",
+        "paramB": "B",
+        "paramC": "2017-01-01",
+        "paramD": "2017-01-04",
+        "paramE": 127
+      }
+    },
+    "series": {
+      "samples": [
+        { "date": "2017-01-01", "value": 827 },
+        { "date": "2017-01-02", "value": 754 },
+        { "date": "2017-01-03", "value": 1194 },
+        { "date": "2017-01-04", "value": 432 },
+        { "date": "2017-01-05", "value": 1877 },
+        { "date": "2017-01-06", "value": 874 },
+        { "date": "2017-01-07", "value": 369 },
+        { "date": "2017-01-08", "value": 1049 }
+      ]
+    }
+  }

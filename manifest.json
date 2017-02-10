@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chartify!",
+  "description": "This extension attempts to convert current tab's json output to a chart",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "Chartify.png",
+    "default_popup": "chartify.html",
+    "default_title": "Click here to Chartify!"
+  },
+  "permissions": [
+    "activeTab",
+    "http://*/",
+    "https://*/",
+    "file://*.json"
+  ]
+}
