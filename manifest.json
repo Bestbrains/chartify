@@ -3,7 +3,7 @@
 
   "name": "Chartify!",
   "description": "This extension attempts to convert current tab's json output to a chart",
-  "version": "0.1",
+  "version": "0.0.1",
 
   "browser_action": {
     "default_icon": "Chartify.png",
