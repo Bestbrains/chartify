@@ -18,7 +18,6 @@ $(document).ready(function() {
     function generateChart() {
         getCurrentTabUrl(function(url) {
             console.log("Fetching for: ", url);
-            // TODO: Consider just getting access to current tab's content.
             $.getJSON(url, undefined, buildChartFromData);
         });
     }
@@ -72,5 +71,4 @@ $(document).ready(function() {
     }
 
     generateChart();
-//    $('#reload').on('click', generateChart)
 });
