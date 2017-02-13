@@ -3,7 +3,6 @@
 
   "name": "Chartify!",
   "short_name": "Chartify",
-  "default_locale": "en",
   "description": "This extension attempts to convert current tab's json output to a chart",
   "version": "0.0.1",
   "author": "KBroloes",
