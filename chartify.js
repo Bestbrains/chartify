@@ -63,7 +63,7 @@ $(document).ready(function() {
                     keys: {
                         x: xName,
                         value: keyNames
-                    }
+                    },
                     json: samples
                 },
                 axis: {
