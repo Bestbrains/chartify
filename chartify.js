@@ -24,6 +24,7 @@ $(document).ready(function() {
 
     function buildChartFromData(data) {
         let layout = DataCrawler.getLayoutFor(data)
+        console.log(layout)
         if(layout === "undecidable") {
             $("#content").text("Result is not a supported timeseries format. Sorry.");
         } else {
@@ -33,16 +34,27 @@ $(document).ready(function() {
             $("#debug").text(layout.x + " " + layout.keys + " " + layout.type);
 
             sampleLocation = data
+
+            // Fast forward sample location to the data array.
             for(let i = 0; i < xSplit.length -2; i++) {
               sampleLocation = sampleLocation[xSplit[i]]
             }
-
+            // Use the last name as the key for the x axis.
             xName = xSplit[xSplit.length - 1]
 
+            // Go through each of the keys and extract their names for c3
             layout.keys.forEach((key) => {
                 let locSplit = key.split('.')
                 let keyName = locSplit[locSplit.length - 1]
                 keyNames.push(keyName)
+            })
+
+            let samples = sampleLocation.map((sample) => {
+              // Translate dates to javascript date objects (Helps c3)
+              if(layout.type === "timeseries") {
+                sample[xName] = new Date(sample[xName])
+              }
+              return sample
             })
 
             let chartConfig = {
@@ -51,8 +63,8 @@ $(document).ready(function() {
                     keys: {
                         x: xName,
                         value: keyNames
-                    },
-                    json: sampleLocation
+                    }
+                    json: samples
                 },
                 axis: {
                     x: {
